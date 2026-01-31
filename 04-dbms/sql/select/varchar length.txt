@@ -1,0 +1,17 @@
+link:  https://leetcode.com/problems/invalid-tweets/description
+
+notes:
+LENGTH() → counts bytes
+CHAR_LENGTH() → counts characters
+
+example:
+If content = "Hello😊"
+LENGTH() → maybe 9 bytes
+CHAR_LENGTH() → 6 characters
+
+
+code:
+i)  select tweet_id from Tweets where LENGTH(content)>15
+ii) select tweet_id from Tweets where CHAR_LENGTH(content)>15
+
+option (ii) is safe , but both are accepted for this problem.

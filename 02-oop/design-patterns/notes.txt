@@ -1,0 +1,244 @@
+1️⃣ Factory Pattern
+
+Purpose / Definition:
+
+Creates objects without exposing the instantiation logic.
+
+Client uses interface/abstract class instead of concrete classes.
+
+When to Use:
+
+Object creation logic is complex or varies at runtime.
+
+There are multiple subclasses of a type.
+
+You want loose coupling between client and concrete classes.
+
+Real-Life Example:
+
+Notifications → Email, SMS, Push.
+
+Database connections → MySQL, PostgreSQL.
+
+Payment gateway → PayPal, Stripe.
+
+Advantages:
+
+Loose coupling, centralized object creation, easy to add new types.
+
+Disadvantages:
+
+Factory class can become large, violates Open-Closed Principle if frequently modified.
+
+
+2️⃣ Abstract Factory Pattern
+
+Purpose / Definition:
+
+Provides interface for creating families of related objects without specifying their concrete classes.
+
+It’s like a factory of factories.
+
+When to Use:
+
+You have multiple related product types that must be created together.
+
+Switching families of products at runtime (e.g., Light/Dark UI themes).
+
+Real-Life Example:
+
+GUI themes → LightThemeFactory creates Button + TextBox, DarkThemeFactory creates Button + TextBox.
+
+Database families → MySQLConnection + MySQLCommand, PostgreSQLConnection + PostgreSQLCommand.
+
+Advantages:
+
+Ensures compatibility among related products, easy to switch families.
+
+Disadvantages:
+
+Hard to add new product types, many classes → complexity.
+
+
+3️⃣ Singleton Pattern
+
+Purpose / Definition:
+
+Ensures only one instance of a class exists and provides a global access point.
+
+When to Use:
+
+Shared resources that must have single control (e.g., logging, database).
+
+Configurations that must be consistent across the application.
+
+Real-Life Example:
+
+Logger instance
+
+Database connection pool
+
+Configuration manager
+
+Advantages:
+
+Controlled access, memory efficient, global access.
+
+Disadvantages:
+
+Difficult to test, thread-safety issues if not handled.
+
+
+4️⃣ Builder Pattern
+
+Purpose / Definition:
+
+Builds complex objects step by step, separating construction from representation.
+
+When to Use:
+
+Object has many optional parameters.
+
+You want readable code instead of a long constructor.
+
+Immutable objects are desired.
+
+Real-Life Example:
+
+Meal builder → Burger + Drink + Fries
+
+Computer configuration → CPU + GPU + RAM + Storage
+
+StringBuilder (in Java)
+
+Advantages:
+
+Readable, flexible, supports immutable objects.
+
+Disadvantages:
+
+More classes/code to maintain.
+
+
+5️⃣ Adapter Pattern
+
+Purpose / Definition:
+
+Converts one interface to another so that incompatible interfaces can work together.
+
+When to Use:
+
+Integrating legacy systems.
+
+API adaptation when the client expects a different interface.
+
+Real-Life Example:
+
+Mobile charger → converts voltage/current to phone standard.
+
+MediaPlayer Adapter → VLCPlayer implements MediaPlayer interface.
+
+Payment gateway adapter → Old API → New unified interface.
+
+Advantages:
+
+Reusability, no modification of existing code.
+
+Disadvantages:
+
+Adds extra layer, small performance overhead.
+
+
+6️⃣ Filter (Criteria) Pattern
+
+Purpose / Definition:
+
+Filters a set of objects using different criteria and can chain filters together.
+
+When to Use:
+
+Dynamic filtering of collections.
+
+Combining multiple criteria without hardcoding conditions.
+
+Real-Life Example:
+
+E-commerce → Filter products by price, color, category.
+
+Employee management → Filter by department, experience.
+
+Advantages:
+
+Flexible, easily extendable, criteria can be chained.
+
+Disadvantages:
+
+May be less performant for large datasets.
+
+
+7️⃣ Observer Pattern
+
+Purpose / Definition:
+
+Defines a one-to-many dependency.
+
+When the subject changes, all observers are automatically notified.
+
+When to Use:
+
+Event-driven systems.
+
+Real-time updates where many objects depend on one.
+
+Real-Life Example:
+
+Stock ticker → multiple displays update in real-time.
+
+News subscriptions → users notified on updates.
+
+GUI event listeners → buttons, checkboxes.
+
+Advantages:
+
+Loose coupling, automatic updates.
+
+Disadvantages:
+
+Can cause memory leaks if observers not removed, hard to debug large chains.
+
+
+8️⃣ Chain of Responsibility Pattern
+
+Purpose / Definition:
+
+Passes a request along a chain of handlers. Each handler decides to handle it or pass it along.
+
+When to Use:
+
+Multiple objects can handle a request.
+
+Decouple sender and receiver.
+
+Dynamic request handling.
+
+Real-Life Example:
+
+ATM cash dispenser → $50, $20, $10 notes.
+
+Logging frameworks → different levels: info, debug, error.
+
+Support tickets → level 1, level 2, level 3 support.
+
+Advantages:
+
+Loose coupling, easy to add new handlers.
+
+Disadvantages:
+
+Request may go unhandled, debugging chain can be tricky.
+
+
+
+UML diagram source: 
+https://www.tutorialspoint.com/design_pattern/design_pattern_overview.htm
+https://refactoring.guru/design-patterns
