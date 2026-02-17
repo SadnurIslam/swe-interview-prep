@@ -3,6 +3,10 @@ link:  https://leetcode.com/problems/divide-an-array-into-subarrays-with-minimum
 
 */
 
+/*
+Note: index 0 should be always in the first subarray as first element
+*/
+
 class Solution {
 public:
     int minimumCost(vector<int>& nums) {
