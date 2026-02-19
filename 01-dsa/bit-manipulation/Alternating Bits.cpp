@@ -1,5 +1,5 @@
 /*
-Daily problem practice
+Daily practice problem
 Link: https://leetcode.com/problems/binary-number-with-alternating-bits/description
 */
 
