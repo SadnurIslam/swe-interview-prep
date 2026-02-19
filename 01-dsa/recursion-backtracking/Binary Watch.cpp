@@ -1,4 +1,5 @@
 /*
+Daily practice problem
 Link: https://leetcode.com/problems/binary-watch/?envType=daily-question&envId=2026-02-17
 */
 
