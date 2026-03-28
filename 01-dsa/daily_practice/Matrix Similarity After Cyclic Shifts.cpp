@@ -1,7 +1,6 @@
 /*
 Daily practice problem
-Link: https://leetcode.com/problems/matrix-similarity-after-cyclic-shifts/description/?envType=daily-question&envId=2026-03-27
-*/
+Link: https://leetcode.com/problems/matrix-similarity-after-cyclic-shifts/description
 
 
 
