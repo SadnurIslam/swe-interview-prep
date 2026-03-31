@@ -1,6 +1,6 @@
 /*
 Daily practice problem
-Link: https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/description/?envType=daily-question&envId=2026-03-30
+Link: https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/description
 */
 
 // first attempt (accepted)
