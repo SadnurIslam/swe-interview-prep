@@ -4,6 +4,15 @@ Link: https://leetcode.com/problems/maximum-amount-of-money-robot-can-earn/?envT
 */
 
 
+/*
+Strategy:
+1. Create a 3D dp array where dp[i][j][0] will store the maximum amount of money the robot can earn when it reaches cell (i,j) without using any power-up, dp[i][j][1] will store the maximum amount of money the robot can earn when it reaches cell (i,j) after using one power-up, and dp[i][j][2] will store the maximum amount of money the robot can earn when it reaches cell (i,j) after using two power-ups.
+2. Initialize the dp array with a very small value (like -1000000000) to indicate that those states are not reachable.
+3. Iterate through the grid and fill the dp array based on the values in the coins grid and the transitions from the previous two states.
+4. Finally, return the maximum value among dp[m][n][0], dp[m][n][1], and dp[m][n][2] as the answer.
+*/
+
+
 
 class Solution {
 public:
