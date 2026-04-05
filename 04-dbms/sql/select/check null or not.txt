@@ -1,0 +1,20 @@
+link: https://leetcode.com/problems/find-customer-referee/description/?envType=study-plan-v2&envId=top-sql-50
+
+Rule:
+Check if NULL -> WHERE column_name IS NULL
+
+Check if NOT NULL -> WHERE column_name IS NOT NULL
+
+
+Solution:
+
+select name 
+from Customer
+where referee_id!=2 or  referee_id is null
+
+
+
+***
+wrong approach: referee_id=null / referee_id!=null
+***
+
