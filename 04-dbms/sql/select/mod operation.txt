@@ -1,0 +1,23 @@
+link: https://leetcode.com/problems/not-boring-movies/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+Mod operation: x mod y can be done using 
+i) x%y or, 
+ii) mod(x,y)
+
+
+
+Solution:
+
+select * from Cinema 
+where id%2=1 and description !='boring'
+order by rating desc 
+
+
+
+
+Alternative:
+
+select * from Cinema 
+where mod(id,2)=1 and description !='boring'
+order by rating desc 
