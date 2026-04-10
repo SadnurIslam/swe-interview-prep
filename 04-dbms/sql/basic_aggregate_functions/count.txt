@@ -1,0 +1,22 @@
+Note:
+**WHERE vs HAVING
+->WHERE is used to filter rows before grouping.
+->HAVING is used to filter results after GROUP BY.
+
+**Use HAVING with aggregate functions like:
+COUNT()
+SUM()
+AVG()
+MAX()
+MIN()
+
+
+link: https://leetcode.com/problems/duplicate-emails/?envType=problem-list-v2&envId=database
+
+
+
+solution:
+
+select email from person
+group by email
+having count(email)>1
