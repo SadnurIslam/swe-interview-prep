@@ -1,0 +1,20 @@
+link: https://leetcode.com/problems/game-play-analysis-i/description/
+
+
+
+My first solution:
+
+select p1.player_id,p1.event_date as first_login from activity p1
+where p1.event_date<=(
+    select min(event_date) from activity p2
+    where p1.player_id=p2.player_id
+)
+
+Verdict: Accepted but time complexity is O(n^2) because of subquery in where clause.
+
+
+
+Best solution: with min function
+
+select player_id,min(event_date) as first_login from activity
+group by player_id
