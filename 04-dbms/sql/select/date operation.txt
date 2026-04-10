@@ -1,0 +1,41 @@
+Some operations:
+1. Add days to a date: SELECT DATE_ADD('2026-04-10', INTERVAL 5 DAY);
+    => directly using + : SELECT '2026-04-10' + INTERVAL 5 DAY;
+2. Subtract days from a date: SELECT DATE_SUB('2026-04-10', INTERVAL 5 DAY);
+    => directly using - : SELECT '2026-04-10' - INTERVAL 5 DAY;
+3. Calculate the difference between two dates: SELECT DATEDIFF('2026-04-10', '2026-04-01');
+4. Get the current date: SELECT CURDATE();
+5. Get the current date and time: SELECT NOW();
+6. Extract the year from a date: SELECT YEAR('2026-04-10');
+7. Extract the month from a date: SELECT MONTH('2026-04-10');
+8. Extract the day from a date: SELECT DAY('2026-04-10');
+9. Add months to a date: SELECT DATE_ADD('2026-04-10', INTERVAL 2 MONTH);
+10. Subtract months from a date: SELECT DATE_SUB('2026-04-10', INTERVAL 2 MONTH);
+11. Add years to a date: SELECT DATE_ADD('2026-04-10', INTERVAL 1 YEAR);
+12. Subtract years from a date: SELECT DATE_SUB('2026-04-10', INTERVAL 1 YEAR);
+13. Get the day of the week for a date: SELECT DAYOFWEEK('2026-04-10');
+14. Get the week number for a date: SELECT WEEK('2026-04-10 ');
+
+15. Add hours to a datetime: SELECT DATE_ADD('2026-04-10 12:00:00', INTERVAL 3 HOUR);
+16. Subtract hours from a datetime: SELECT DATE_SUB('2026-04-10 12:00:00', INTERVAL 3 HOUR);
+17. Add to current datetime: SELECT DATE_ADD(NOW(), INTERVAL 1 DAY);
+
+
+
+Problem link: https://leetcode.com/problems/rising-temperature/description/
+
+
+Solution 1:
+
+select w1.id from weather w1
+join weather w2
+on (w1.recordDate-interval 1 day) = w2.recordDate
+and w1.temperature>w2.temperature
+
+
+Solution 2:
+
+select w1.id from weather w1
+join weather w2
+on DATEDIFF(w1.recordDate,w2.recordDate) = 1
+and w1.temperature>w2.temperature
