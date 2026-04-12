@@ -1,0 +1,22 @@
+link:  https://leetcode.com/problems/nth-highest-salary/description/
+
+
+Note:
+Write a SQL query to get the nth highest salary from the Employee table.
+MySQL does not allow OFFSET N-1 directly inside function, so we need to declare a variable and set it to N-1, then use that variable in the OFFSET clause.
+
+
+
+Solution:
+
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+    declare pad int;
+    set pad  = N-1;
+  RETURN (
+      select distinct salary from employee
+      order by salary desc
+      limit 1 offset pad
+
+  );
+END
