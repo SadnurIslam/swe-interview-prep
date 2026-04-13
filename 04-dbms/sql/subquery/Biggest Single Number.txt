@@ -1,0 +1,17 @@
+Link:  https://leetcode.com/problems/biggest-single-number/
+
+
+Note: 
+1. Every derived table must have an alias.
+2. max use na kore order by use korle null na eshe empty result asbe jdi solution ektao na thake. max use korle null asbe. 
+tai null jehetu output dite bolse answer na thakle, tai max use korbo
+
+
+
+Solution:
+
+select max(num) as num from (
+    select num from MyNumbers
+    group by num
+    having count(*)=1
+) as tmp
