@@ -1,0 +1,17 @@
+Link:  https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+Note:
+->Inner Join- Returns records that have matching values in both tables. If there is no match, the record will not be included in the result set.
+-> Writing only join is same as inner join.
+
+
+
+
+Solution:
+
+select product_name, year, price 
+from Sales s
+join Product p
+on p.product_id = s.product_id
