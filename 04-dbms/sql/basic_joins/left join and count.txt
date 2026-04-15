@@ -1,0 +1,20 @@
+Link:    https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+Note:
+-> Left Join- Returns all records from the left table and the matched records from the right table. 
+    If there is no match, the result is NULL on the right side.
+
+
+
+
+
+Solution:
+
+select customer_id, count(*) as count_no_trans 
+from Visits v
+left join Transactions tx
+on v.visit_id = tx.visit_id
+where tx.visit_id is null
+group by customer_id
