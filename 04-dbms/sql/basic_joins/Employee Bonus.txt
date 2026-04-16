@@ -1,0 +1,19 @@
+Link:   https://leetcode.com/problems/employee-bonus/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+
+
+Note:
+-> left join: return all records from the left table and the matched records from the right table. If there is no match, the result is NULL on the right side.
+
+
+
+
+
+Solution:
+
+select name, bonus from Employee e 
+left join Bonus b
+on e.empId=b.empId
+where b.bonus<1000 or b.bonus is null
