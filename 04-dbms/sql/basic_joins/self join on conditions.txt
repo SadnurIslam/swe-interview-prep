@@ -1,0 +1,19 @@
+Link:   https://leetcode.com/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+
+Note:
+-> round(val,k): show only k decimal points
+-> avg(val): average of val
+
+
+
+
+
+Solution:
+
+select m1.machine_id, round(avg(m2.timestamp-m1.timestamp),3) as processing_time from Activity m1
+join Activity m2
+on m1.machine_id=m2.machine_id and m1.process_id=m2.process_id and m1.activity_type!=m2.activity_type and m1.activity_type='start'
+group by m1.machine_id
