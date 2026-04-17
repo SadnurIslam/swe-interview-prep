@@ -1,0 +1,28 @@
+Link:   https://leetcode.com/problems/confirmation-rate/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+
+
+Note:
+-> Confirmation Rate is the percentage of users who confirmed their signups. 
+    It is calculated as (Number of Confirmed Signups / Total Number of Signups).
+-> we will use conditional statement inside the avg function and 
+    return 1 for confirmed signups and 0 for unconfirmed signups. 
+    Then we will round the result to 2 decimal places.
+
+
+
+Solution:
+
+select s.user_id, 
+    round(avg(
+        case
+            when action ='confirmed' then 1
+            else 0
+        end
+    ),2) as confirmation_rate
+from Signups s
+left join Confirmations c
+on c.user_id=s.user_id
+group by s.user_id
