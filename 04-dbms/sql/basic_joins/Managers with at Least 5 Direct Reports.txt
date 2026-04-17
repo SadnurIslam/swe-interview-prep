@@ -1,0 +1,43 @@
+Link:   https://leetcode.com/problems/managers-with-at-least-5-direct-reports/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+
+
+
+
+Solution 1: (Self join)  -> Most efficient solution
+
+select e1.name from Employee e
+join Employee e1
+on e.managerId=e1.id
+group by e.managerId
+having count(e.managerId)>=5
+
+
+
+
+
+Solution 2: (Subquery and intersection)
+
+select name from Employee 
+where id in (
+    select managerId from Employee
+    group by managerId
+    having count(managerId)>=5
+)
+
+
+
+Solution 3: (Join with derived table)
+
+select e.name as name from (
+    select managerId from Employee
+    group by managerId
+    having count(managerId)>=5
+) t
+join Employee e
+on t.managerID = e.id
+
+
+
