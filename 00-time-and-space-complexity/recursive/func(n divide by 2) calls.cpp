@@ -1,5 +1,8 @@
+=> recursion er space complexity O(depth of the tree), ekhane depth logn
+
 => Space complexity will O(logn) for all cases here 
     because the maximum depth of the call stack is log n (since we are dividing n by 2 in each recursive call).
+    n = depth of the call stack
 
 
 
