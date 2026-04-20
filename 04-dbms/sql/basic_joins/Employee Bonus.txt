@@ -5,7 +5,8 @@ Link:   https://leetcode.com/problems/employee-bonus/description/?envType=study-
 
 
 Note:
--> left join: return all records from the left table and the matched records from the right table. If there is no match, the result is NULL on the right side.
+-> left join: return all records from the left table and the matched records from the right table. If there is no match, the result is NULL on the right side.ll
+
 
 
 
