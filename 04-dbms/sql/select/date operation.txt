@@ -20,6 +20,9 @@ Some operations:
 16. Subtract hours from a datetime: SELECT DATE_SUB('2026-04-10 12:00:00', INTERVAL 3 HOUR);
 17. Add to current datetime: SELECT DATE_ADD(NOW(), INTERVAL 1 DAY);
 
+18. Extract year and month from a date: SELECT YEAR('2026-04-10') AS year, MONTH('2026-04-10') AS month;
+or, select date_format('2026-04-10','%Y-%m') as year_month;
+
 
 
 Problem link: https://leetcode.com/problems/rising-temperature/description/
