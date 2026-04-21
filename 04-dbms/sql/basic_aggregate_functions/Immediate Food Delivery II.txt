@@ -1,0 +1,19 @@
+Link:   https://leetcode.com/problems/immediate-food-delivery-ii/description/
+
+
+
+Solution:
+
+select round(avg(
+    case
+        when d1.order_date=d1.customer_pref_delivery_date then 1
+        else 0
+    end
+)*100,2) as immediate_percentage 
+from Delivery d1
+join(
+    select customer_id, min(order_date) as order_date
+    from Delivery
+    group by customer_id
+) as d2
+on d1.customer_id=d2.customer_id and d1.order_date=d2.order_date
