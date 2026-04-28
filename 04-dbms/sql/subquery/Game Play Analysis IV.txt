@@ -1,0 +1,16 @@
+Link:   https://leetcode.com/problems/game-play-analysis-iv/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+
+Solution: 
+
+select round(count(distinct a2.player_id)/count(distinct a1.player_id),2) as fraction
+from Activity a1
+left join Activity a2
+on a1.player_id=a2.player_id and
+datediff(a2.event_date,a1.event_date)=1
+where (a1.player_id, a1.event_date) in (
+    select player_id, min(event_date) from Activity
+    group by player_id
+)
