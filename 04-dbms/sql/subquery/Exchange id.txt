@@ -1,0 +1,30 @@
+Link:   https://leetcode.com/problems/exchange-seats/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+
+
+
+
+Solution: (using self join)
+
+select s1.id, s2.student 
+from Seat s1
+join Seat s2
+on (s1.id%2=0 and s1.id=s2.id+1) or 
+(s1.id%2=1 and s1.id=s2.id-1) or 
+(s1.id%2=1 and s1.id=(select count(*) from Seat) and s1.id=s2.id)
+order by s1.id
+
+
+
+
+Alternative: (using subquery)
+
+select 
+case
+    when id%2=0 then id-1
+    when id%2=1 and (select max(id) from Seat)=id then id
+    else id+1
+end as id, student
+from Seat
+order by id
