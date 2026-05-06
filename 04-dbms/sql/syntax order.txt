@@ -1,0 +1,3 @@
+Order must be:
+
+FROM → WHERE → GROUP BY → HAVING → ORDER BY
