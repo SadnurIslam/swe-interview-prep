@@ -1,0 +1,14 @@
+Rank: 1,2,2,4 
+syntax: RANK() OVER (ORDER BY column_name)
+
+
+Dense Rank: 1,2,2,3
+syntax: DENSE_RANK() OVER (ORDER BY column_name)
+
+
+Row Number: 1,2,3,4
+syntax: ROW_NUMBER() OVER (ORDER BY column_name)
+
+
+=> if want to rank based on tuples then we can use partition by clause with order by clause, otherwise we can use only order by clause to rank based on column value.
+example: RANK() OVER (PARTITION BY department ORDER BY salary)

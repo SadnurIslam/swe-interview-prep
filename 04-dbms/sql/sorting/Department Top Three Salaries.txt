@@ -1,0 +1,18 @@
+Link:   https://leetcode.com/problems/department-top-three-salaries/description/?envType=study-plan-v2&envId=top-sql-50
+
+
+Note:
+-> see the use of rank(), dense_rank() and row_number() in ./rank+dense_rank+row_number.txt file
+
+
+
+
+Solution:
+
+select d.name as Department, tmp.name as Employee, Salary from (
+    select * , dense_rank() over (partition by departmentId order by Salary desc) as rnk
+    from Employee
+) as tmp
+join Department d
+on tmp.departmentId =d.id
+where rnk<=3
