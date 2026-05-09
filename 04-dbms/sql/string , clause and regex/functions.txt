@@ -1,0 +1,47 @@
+Note: in mysql string is 1base index
+
+=>lower(column_name) -> converts all characters in the specified column to lowercase.
+
+=>upper(column_name) -> converts all characters in the specified column to uppercase.
+
+=>trim(column_name) -> removes leading and trailing whitespace from the specified column.
+
+=>length(column_name) -> returns the number of characters in the specified column.
+
+=>concat(column1, column2, ...) -> concatenates multiple columns or strings together.
+
+=>substr(column_name, start_position) -> extracts a substring from the specified column
+starting at the given position until the end of the string.
+
+=>substr(column_name, start_position, length) -> extracts a substring from the 
+specified column starting at the given position and with the specified length.
+
+=>replace(column_name, from_string, to_string) -> replaces occurrences of 
+a specified string with another string in the specified column.
+
+=>instr(column_name, substring) -> returns the position of the first occurrence of
+the specified substring in the specified column. If the substring is not found, it returns 0.
+
+=>lpad(column_name, length, pad_string) -> left-pads the specified column with the specified 
+string until it reaches the specified length.
+
+=>rpad(column_name, length, pad_string) -> right-pads the specified column 
+with the specified string until it reaches the specified length.
+
+
+=>like operator -> used for pattern matching in SQL. It allows you to 
+search for a specified pattern in a column using wildcard characters such as
+% (matches any sequence of characters) and _ (matches any single character).
+
+=>regexp_like(column_name, pattern) -> returns true if the specified column
+matches the regular expression pattern.
+
+=>left(column_name, length) -> returns the leftmost specified number of characters from the specified column.
+
+=>right(column_name, length) -> returns the rightmost specified number of characters from the specified column.
+
+=> group_concat(column_name) -> concatenates values from multiple rows into a single string.
+syntax: group_concat(column_name SEPARATOR 'separator_string') -> allows you to specify
+a custom separator between the concatenated values. If no separator is specified, the default is a comma (,).
+
+
