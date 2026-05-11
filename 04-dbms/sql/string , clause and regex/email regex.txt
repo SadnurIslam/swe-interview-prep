@@ -1,0 +1,14 @@
+Link:  https://leetcode.com/problems/find-users-with-valid-e-mails/
+
+
+
+note:
+=>binary is used to make the comparison case-sensitive, ensuring that only email addresses with the exact domain "leetcode.com" (in lowercase) are considered valid.
+
+
+
+Solution: 
+
+select * from Users
+where mail regexp '^[A-Za-z]+[A-Za-z0-9_.-]*@leetcode\\.com$'
+and mail like binary '%@leetcode.com'
