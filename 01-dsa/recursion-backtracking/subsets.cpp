@@ -2,6 +2,11 @@ Link:   https://leetcode.com/problems/subsets/description/
 
 
 
+Note:
+=> subset er khetre ekbar niye samne jabo, ekbar na niye samne jabo
+
+
+
 Solution: using recursion and backtracking
 
 class Solution {
